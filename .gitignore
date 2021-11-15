@@ -6,3 +6,4 @@ dist-ssr
 
 package-lock.json
 project.config.json
+.idea
