@@ -1,5 +1,5 @@
 const config = {
-  projectName: 'activity-mini-react',
+  projectName: 'activity-weapp',
   date: '2021-8-28',
   designWidth: 750,
   deviceRatio: {

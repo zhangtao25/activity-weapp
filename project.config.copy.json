@@ -1,10 +1,9 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "activity-mini-react",
+  "projectname": "activity-weapp",
   "description": "",
   "appid": "wx123456789",
   "setting": {
-//    不检查域名
     "urlCheck": false,
     "es6": false,
     "postcss": false,
