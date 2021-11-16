@@ -1,4 +1,4 @@
-import { request } from "@tarojs/taro";
+import { request } from "../utils/request";
 import {config} from "../config";
 
 export class UserService {
@@ -7,6 +7,13 @@ export class UserService {
             url: config.platformapi + '/user/wxLogin',
             data: params,
             method: 'POST'
+        })
+    }
+    static profile (params){
+        return request({
+            url: config.platformapi + '/user/getuserinfo',
+            data: params,
+            method: 'GET'
         })
     }
 }

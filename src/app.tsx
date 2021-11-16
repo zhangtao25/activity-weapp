@@ -32,7 +32,6 @@ class App extends Component {
                 // error
               }
               // 拿用户信息，存到vuex里
-              console.log(console)
             } else {
               // 登录失败后清除token
               try {
@@ -42,7 +41,7 @@ class App extends Component {
               }
               // 设置openid
               try {
-                Taro.setStorageSync('openid', 'wxLoginCb.openid');
+                Taro.setStorageSync('openid', checkIsHasUserRes.openid);
               } catch (e) {
                 // error
               }
