@@ -28,6 +28,7 @@ class App extends Component {
               // 登录成功后先设置token
               try {
                 Taro.setStorageSync('token', checkIsHasUserRes.token);
+                Taro.setStorageSync('weappId', checkIsHasUserRes.openid)
               } catch (e) {
                 // error
               }

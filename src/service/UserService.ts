@@ -16,4 +16,14 @@ export class UserService {
             method: 'GET'
         })
     }
+
+    static wxCreateAndUpdate (params){
+        return request({
+            url: config.platformapi + '/user/wxCreateAndUpdate',
+            data: params,
+            method: 'POST'
+        })
+    }
+
+
 }
