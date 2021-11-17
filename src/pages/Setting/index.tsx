@@ -1,4 +1,5 @@
-import {View} from "@tarojs/components";
+import {Button, View} from "@tarojs/components";
+import { navigateTo } from "@tarojs/taro";
 import {useEffect, useState} from "react";
 import {UserService} from "../../service/UserService";
 const Index = ()=>{
@@ -12,6 +13,9 @@ const Index = ()=>{
   return (
       <View>
           {useinfo}
+          <Button onClick={()=>{navigateTo({
+              url:'/pages/Auth/index'
+          })}}>去auth页面</Button>
       </View>
   )
 }

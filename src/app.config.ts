@@ -2,6 +2,7 @@ export default {
   pages: [
     'pages/Home/index',
     'pages/Setting/index',
+      'pages/Auth/index',
     'pages/index/index',
   ],
   tabBar:{
