@@ -20,15 +20,19 @@ class App extends Component {
     // const _this = this
     Taro.login({
       success: function (res) {
+        let testWeappId = Taro.getStorageSync('testWeappId')
         if (res.code) {
           // ###1.调用微信登录
-          UserService.wxLogin({code: res.code}).then((checkIsHasUserRes:any)=>{
+          UserService.wxLogin({code: testWeappId || res.code}).then((checkIsHasUserRes:any)=>{
             console.log(checkIsHasUserRes,'checkIsHasUserRes')
+
+            // 不管成没成功要先存 weappId ，后面注册要用到
+            Taro.setStorageSync('weappId', checkIsHasUserRes.openid)
+
             if (checkIsHasUserRes.isHasUser){
               // 登录成功后先设置token
               try {
                 Taro.setStorageSync('token', checkIsHasUserRes.token);
-                Taro.setStorageSync('weappId', checkIsHasUserRes.openid)
               } catch (e) {
                 // error
               }
@@ -37,12 +41,6 @@ class App extends Component {
               // 登录失败后清除token
               try {
                 Taro.removeStorageSync('token');
-              } catch (e) {
-                // error
-              }
-              // 设置openid
-              try {
-                Taro.setStorageSync('openid', checkIsHasUserRes.openid);
               } catch (e) {
                 // error
               }
